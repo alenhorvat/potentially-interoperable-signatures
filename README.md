@@ -301,6 +301,30 @@ format.
 
 Preferred way (but not limited to) is using the JSON-LD context.
 
+## Protecting and embedding external resources
+
+In some cases, content or signatures link or reference external resources. In
+most cases, these resources must be immutable, hence they should be
+appropriately protected.
+
+If referenced resources are present, its digest must be protected so that the
+verifier can be sure that the resolved content matches the content that was
+referenced by the signer. This can be achieved either by putting the digest in
+the URL/URI or explicitly expressing it.
+
+## Sharing external resources
+
+Once external resources are sufficiently protected, we need to ensure we can
+share them with the verifier, whenever that's required (for performance or
+privacy purposes) or in cases where verifiers have limited availability to the
+web.
+
+Hence, signature formats should enable sharing unprotected content (e.g., unprotected header in JSON serialised JWS).
+
+## CBOR pointers
+
+Placeholder for CBOR pointers.
+
 ## The challenge
 
 This is an early draft. Feel free to open an issue.
